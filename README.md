@@ -7,7 +7,7 @@
 ***
 ***
 *** To avoid retyping too much info. Do a search and replace for the following:
-*** donnerhanson, Mutex_ProdCons, donnerhanson, hanso127@mail.chapman.edu
+*** donnerhanson, prodcon, donnerhanson, hanso127@mail.chapman.edu
 -->
 
 
@@ -30,9 +30,6 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/donnerhanson/Mutex_ProdCons">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
 
   <h3 align="center">Producer Consumer</h3>  
 
@@ -83,7 +80,7 @@ GNU Compiler Collection (GCC 4.6 or newer with C++11 standard support)
 
 1. Clone the repo
 ```sh
-git clone https://github.com/donnerhanson/Mutex_ProdCons.git
+git clone https://github.com/donnerhanson/prodcon.git
 ```
 
 
@@ -190,7 +187,7 @@ nitems must be between 0 and 1489
 
 Donner Hanson - [@hansondonner](https://twitter.com/hansondonner) - hanso127@mail.chapman.edu - ChapmanID - 001276484
 
-Project Link: [https://github.com/donnerhanson/Mutex_ProdCons](https://github.com/donnerhanson/Mutex_ProdCons)
+Project Link: [https://github.com/donnerhanson/prodcon](https://github.com/donnerhanson/prodcon)
 
 
 
