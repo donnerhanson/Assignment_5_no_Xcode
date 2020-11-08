@@ -70,7 +70,6 @@ typedef struct packet {
 /* Prototypes */
 void write_packet_to_buff(int nitems);
 int check_pkt_in_buff(int nitems, int curr_out);
-//extern unsigned int ip_checksum(unsigned char *data, int length);
 void showPacketContents(packet in);
 void showPacketPayload(packet in);
 void sig_handler(int sig);
