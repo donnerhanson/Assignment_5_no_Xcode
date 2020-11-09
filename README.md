@@ -133,7 +133,7 @@ out: 3
 ```  
 ```sh
 [centos@centos6 prodcon]$ cat output.txt  
-
+...   (similar data exists here)
  cksum_2: 0x4b64  
  CheckSum :0x4b64  
  payload:{ 59, 100, 5, 85, 214, 119, 88, 41, 116, 149, 101, 34, 108, 101, 63, 242, 167, 85, 22, 143, 158, 71, 42, 9, 111, 158, 234, 212, 207, 210, 191, 10, 54, 196 }  
