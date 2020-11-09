@@ -8,16 +8,11 @@ File: prodcon.cpp
 Description:
 uses threads and semaphores to read and write to a shared data buffer
 
-Compilation:
-
-With Shared Lib:
+Compilation using user defined Shared Library ip_checksum:
 g++ -c -Wall -Werror -fPIC ip_checksum.c;
 g++ -shared -o libip_checksum.so ip_checksum.o;
-g++ L. I. -std=c++0x -Wall -Wextra -g prodcon.cpp -o prodcon -lip_checksum -lpthread -lrt;
-
-export LD_LIBRARY_PATH=$pwd:$LD_LIBRARY_PATH
-./prodcon <nitems>
-
+g++ -L. -I. -std=c++0x -Wall -Wextra -g prodcon.cpp -o prodcon -lip_checksum -lpthread -lrt;
+export LD_LIBRARY_PATH=($pwd):$LD_LIBRARY_PATH
 
 
 Run: ./prodcon <nitems in buffer>
@@ -70,6 +65,7 @@ typedef struct packet {
 /* Prototypes */
 void write_packet_to_buff(int nitems);
 int check_pkt_in_buff(int nitems, int curr_out);
+//extern unsigned int ip_checksum(unsigned char *data, int length);
 void showPacketContents(packet in);
 void showPacketPayload(packet in);
 void sig_handler(int sig);
@@ -172,6 +168,7 @@ int main(int argc, const char * argv[]) {
             // look for kill threads
             sem_destroy(&empty); // destroy mutexes
             sem_destroy(&full);  // destroy mutexes
+            pthread_mutex_destroy(&mutex); // destroy thread mutex
             delete [] buffer;
             exit(gSignalStatus);
         }
@@ -230,6 +227,7 @@ void *thread_write(void *arg)
             // look for kill threads
             sem_destroy(&empty); // destroy mutexes
             sem_destroy(&full);  // destroy mutexes
+            pthread_mutex_destroy(&mutex); // destroy thread mutex
             delete [] buffer;
             exit(gSignalStatus);
         }
@@ -275,6 +273,7 @@ void *thread_read(void *arg)
             // look for kill threads
             sem_destroy(&empty); // destroy mutexes
             sem_destroy(&full);  // destroy mutexes
+		    pthread_mutex_destroy(&mutex); // destroy thread mutex
             delete [] buffer;
             exit(gSignalStatus);
         }
